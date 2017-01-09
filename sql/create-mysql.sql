@@ -1,0 +1,30 @@
+CREATE DATABASE IF NOT EXISTS `ds18b20` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `ds18b20`;
+
+CREATE TABLE IF NOT EXISTS `Sensors` (
+`SensorId` int(11) NOT NULL,
+  `SensorNum` varchar(16) CHARACTER SET utf8 NOT NULL,
+  `RoomName` varchar(100) CHARACTER SET utf8 NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+CREATE TABLE IF NOT EXISTS `Temperatures` (
+`TemperatureId` int(11) NOT NULL,
+  `SensorId` int(11) NOT NULL,
+  `TemperatureTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `UnixTime` bigint(20) NOT NULL,
+  `TemperatureValue` decimal(12,3) NOT NULL,
+  `HumidityValue` decimal(12,3) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+
+ALTER TABLE `Sensors`
+ ADD PRIMARY KEY (`SensorId`);
+
+ALTER TABLE `Temperatures`
+ ADD PRIMARY KEY (`TemperatureId`);
+
+
+ALTER TABLE `Sensors`
+MODIFY `SensorId` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1;
+ALTER TABLE `Temperatures`
+MODIFY `TemperatureId` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1;

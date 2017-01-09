@@ -1,0 +1,19 @@
+{
+  "name": "temperature-monitoring",
+  "version": "1.0.0",
+  "description": "Read temperature data from 1-wire sensors ds18b20 and support DHT22 humidity and temperature sensors also.",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "firebase": "^3.6.4",
+    "mysql": "^2.12.0",
+    "node-dht-sensor": "0.0.32",
+    "onoff": "^1.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
